@@ -11,16 +11,16 @@ export default function Navbar() {
 
             <div className="nav-link-wrapper">
                 <div className="nav-link">
-                    <A href="/">Home</A>
+                    <A className="link" href="/">Home</A>
                 </div>
                 <div className="nav-link">
-                    <A href="/schedule">Schedule</A>
+                    <A className="link" href="/schedule">Schedule</A>
                 </div>
                 <div className="nav-link">
-                    <A href="/gallery">Gallery</A>
+                    <A className="link" href="/gallery">Gallery</A>
                 </div>
                 <div className="nav-link">
-                    <A href="/contact">Contact</A>
+                    <A className="link" href="/contact">Contact</A>
                 </div>
             </div>
         </div>
