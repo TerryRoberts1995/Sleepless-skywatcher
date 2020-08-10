@@ -1,0 +1,19 @@
+.navbar-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .logo-container h1 {
+        margin: 0;
+    }
+
+    .nav-link-wrapper {
+        display: flex;
+        flex-direction: row;
+
+        .nav-link {
+            text-align: center;
+            margin-right: 125px;
+        }
+    }
+}
