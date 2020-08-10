@@ -9,17 +9,14 @@ export default function Home() {
             </div>
 
             <div className="content-body-wrapper">
-                <div className="page-content-wrapper">
-                    <div className="content-image">
-                        <h1>Image goes here!</h1>
-                    </div>
+                <div className="content-image">
+                    <img src="https://images.unsplash.com/photo-1548124771-9f2040b66df8" />
+                </div>
 
-                    <div className="content-description">
-                        <p>Content Goes here!</p>
-                    </div>
+                <div className="content-description">
+                    <p>Content Goes here!</p>
                 </div>
             </div>
         </div>
     )
 }
-

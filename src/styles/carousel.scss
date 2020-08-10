@@ -1,5 +1,13 @@
 .container {
+    position: relative;
     width: 100vw;
+
+    .slick-slide p {
+        color: red;
+        position: absolute;
+        bottom: 0px;
+        z-index: 200;
+    }
 }
 
 .slick-slide img {
