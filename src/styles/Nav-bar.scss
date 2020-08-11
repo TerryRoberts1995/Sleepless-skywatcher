@@ -5,12 +5,13 @@
     width: 100vw;
     height: 150px;
     align-items: center;
-    background-color: #302f2f;
+    background-color: black;
     color: white;
-    opacity: 0.8;
+    opacity: 0.9;
+    border-bottom: 1px solid white;
 
     .logo-container h1 {
-        font-size: 50px;
+        font-size: 40px;
         margin-right: 11em;
     }
 
