@@ -21,7 +21,7 @@ export default function Carousel() {
 
                 </div>
                 <div className="carousel-text">
-                    <h3>A trip though the night sky</h3>
+                    <h3>A trip into the night sky</h3>
                 </div>
 
             </div>
