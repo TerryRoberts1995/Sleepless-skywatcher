@@ -1,18 +1,25 @@
 .navbar-wrapper {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     width: 100vw;
     height: 150px;
     align-items: center;
+    font-family: "Poiret One", cursive;
     background-color: black;
+    background-image: url("https://www.wallpapertip.com/wmimgs/0-2462_stars-background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
-    opacity: 0.9;
+    opacity: 0.8;
     border-bottom: 1px solid white;
 
     .logo-container h1 {
-        font-size: 40px;
+        font-size: 45px;
         margin-right: 11em;
+        text-shadow: 1px 2px 4px white;
     }
 
     .nav-link-wrapper {
@@ -25,8 +32,16 @@
 
             .link {
                 text-decoration: none;
+                text-shadow: 2px 1px 3px white;
                 color: white;
-                font-size: 18px;
+                font-size: 19px;
+                border-bottom: transparent;
+                transition: 0.4s ease-in-out;
+
+                &:hover {
+                    border-bottom: 1px solid white;
+                    border-bottom-width: thin;
+                }
             }
         }
     }

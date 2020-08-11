@@ -1,22 +1,47 @@
 .homepage-container {
-    background-color: white;
+    background-image: linear-gradient(to bottom, #03133a, black);
     border-top: 1px solid black;
     box-shadow: 1px 1px 5px black;
 
-    .content-body-wrapper {
+    .all-content {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 50%;
         height: 100%;
-        padding-top: 80px;
+        font-family: "Spartan", sans-serif;
+        margin: 100px auto 100px auto;
+        padding: 0px 50px 50px 50px;
+        background-color: #f5f5f5;
+        box-shadow: 1px 1px 6px 2px white;
+        border-radius: 6px;
 
-        .content-image img {
-            width: 400px;
-            height: 100%;
-        }
-        .content-description {
-            text-align: left;
+        .content-body-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            .content-body {
+                display: flex;
+                flex-direction: row;
+                margin-top: 55px;
+                .content-image img {
+                    width: 400px;
+                    height: 100%;
+                    margin-right: 25px;
+                    border-radius: 18px;
+                    box-shadow: 1px 2px 5px black;
+                }
+                .content-description {
+                    margin-left: 25px;
+
+                    p {
+                        text-align: justify;
+                        padding: 15px;
+                        font-size: 20px;
+                    }
+                }
+            }
         }
     }
 }
