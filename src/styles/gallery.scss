@@ -1,0 +1,28 @@
+@import "./imageCard.scss";
+
+.gallery-main-container {
+    background-image: linear-gradient(to bottom left, #03133a, black);
+    border-top: 1px solid black;
+    box-shadow: 1px 1px 5px black;
+    height: 100%;
+    padding-top: 150px;
+    font-family: "Poiret One", cursive;
+
+
+
+    .image-view-wrapper {
+        padding: 100px;
+        width: 60vw;
+        margin: auto;
+        margin-bottom: 150px;
+        background-color: #f5f5f5;
+        border-radius: 30px;
+        box-shadow: 1px 1px 6px 2px white;
+
+        .gallery-title h1 {
+            font-size: 120px;
+            margin-top: 0;
+            margin-bottom: 80px;
+        }
+    }
+}
