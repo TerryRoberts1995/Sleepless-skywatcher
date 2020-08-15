@@ -50,6 +50,7 @@ export default function Gallery() {
 
     const submitDelete = (event) => {
         event.preventDefault();
+        setStatus("");
 
         axios.delete(`http://localhost:5000/images/${imgId}`,
             buildForm(),
@@ -69,6 +70,7 @@ export default function Gallery() {
 
     const submitAdd = (event) => {
         event.preventDefault();
+        setStatus("");
 
         axios.post("http://localhost:5000/images",
             buildForm(),
@@ -132,7 +134,7 @@ export default function Gallery() {
 
     useEffect(() => {
         getImageData()
-    }, [isOpen])
+    }, [status])
 
     return (
         <div className="gallery-main-container">
