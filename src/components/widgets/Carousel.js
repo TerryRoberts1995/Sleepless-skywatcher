@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import CarouselCard from './CarouselCard'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -25,6 +27,7 @@ export default function Carousel() {
                 </div>
 
             </div>
+
             <Slider {...settings}>
                 <div>
                     <img src='https://images.unsplash.com/photo-1456154875099-97a3a56074d3' alt="image-one" />

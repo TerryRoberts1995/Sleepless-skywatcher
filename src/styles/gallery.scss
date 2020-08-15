@@ -1,6 +1,7 @@
 @import "./imageCard.scss";
 
 .gallery-main-container {
+    position: relative;
     background-image: linear-gradient(to bottom left, #03133a, black);
     border-top: 1px solid black;
     box-shadow: 1px 1px 5px black;
@@ -8,11 +9,22 @@
     padding-top: 150px;
     font-family: "Poiret One", cursive;
 
+    .btn {
+        position: fixed;
+        bottom: 50%;
+    }
 
+    .btn-add {
+        right: 50px;
+        bottom: 55%;
+    }
+    .btn-del {
+        right: 50px;
+    }
 
     .image-view-wrapper {
         padding: 100px;
-        width: 60vw;
+        width: 70vw;
         margin: auto;
         margin-bottom: 150px;
         background-color: #f5f5f5;

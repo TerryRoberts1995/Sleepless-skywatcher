@@ -35,22 +35,19 @@
 
 .slick-slide img {
     margin: auto;
-    height: 70vh;
-    width: 100vw;
+    height: 90vh;
+    width: 100%;
     border-bottom: 1px solid white;
 }
 
-
 @media screen and (max-width: 1600px) {
     .container {
-
         .floating-text {
             height: 250px;
 
             .carousel-text h3 {
                 font-size: 35px;
             }
-
         }
     }
 
@@ -59,10 +56,8 @@
     }
 }
 
-
 @media screen and (max-width: 1000px) {
     .container {
-
         .floating-text {
             height: 200px;
 

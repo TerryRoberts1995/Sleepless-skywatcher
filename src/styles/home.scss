@@ -31,7 +31,6 @@
             box-shadow: 1px 2px 5px black;
         }
 
-
         .content-body-wrapper {
             display: flex;
             flex-direction: column;
@@ -81,15 +80,12 @@
                 .content-body {
                     flex-direction: column;
 
-
                     .content-image img {
                         height: 100%;
                         width: 300px;
                     }
 
                     .content-description {
-
-
                         p {
                             font-size: 13px;
                             text-align: left;
