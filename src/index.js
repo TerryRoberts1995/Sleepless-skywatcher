@@ -5,6 +5,7 @@ import Icons from './icons';
 import "./styles/main.scss";
 import routes from "./components/Navigation/routes";
 import Navbar from './components/Navigation/Nav-bar';
+import Footer from './components/Navigation/Footer';
 
 function App() {
   Icons();
@@ -13,7 +14,7 @@ function App() {
     <div className="App">
       <Navbar />
       {routeResult}
-      {/* add a footer component */}
+      <Footer />
     </div>
   );
 }
