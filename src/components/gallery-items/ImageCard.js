@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 export default function ImageCard(props) {
     let counter = 0;
 
@@ -20,8 +20,8 @@ export default function ImageCard(props) {
                 </div>
 
                 <div className="image-title" >
-                    <h2>{`${counter}. ${name}`}</h2>
-                    <button onClick={() => props.handleImageButton("delete", trueImageId)}>Delete</button>
+                    <h2>{`${name}`}</h2>
+                    <button onClick={() => props.handleImageButton("delete", trueImageId)}><FontAwesomeIcon id="minus-btn" icon="minus-square" /></button>
                 </div>
             </div>
         )

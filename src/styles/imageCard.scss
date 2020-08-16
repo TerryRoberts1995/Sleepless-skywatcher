@@ -7,6 +7,7 @@
     font-weight: 600;
 
     .image-wrapper {
+        padding: 20px;
         .image-url img {
             width: 400px;
             height: 100%;
@@ -16,6 +17,26 @@
 
         .image-title {
             padding: 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                border: none;
+                background-color: transparent;
+
+                svg {
+                    padding: 15px;
+                    font-size: 30px;
+                    color: #03133a;
+                    transition: 0.3s ease-in-out;
+
+                    &:hover {
+                        color: #c50035;
+                    }
+                }
+            }
         }
     }
 }

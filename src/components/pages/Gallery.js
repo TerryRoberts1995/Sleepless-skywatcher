@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Modal from 'react-modal';
 import ImageCard from '../gallery-items/ImageCard';
 import * as Cookies from 'js-cookie';
@@ -138,7 +139,7 @@ export default function Gallery() {
 
     return (
         <div className="gallery-main-container">
-            <button className="btn-add btn" onClick={() => handleImageButton("add")}>Add</button>
+            <FontAwesomeIcon id="plus-btn" className="btn" onClick={() => handleImageButton("add")} icon="plus-square" />
 
             <Modal
                 isOpen={isOpen}
