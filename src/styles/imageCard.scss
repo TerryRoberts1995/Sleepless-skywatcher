@@ -40,3 +40,14 @@
         }
     }
 }
+
+@media screen and (max-width: 1000px) {
+    .main-image-container {
+        justify-content: center;
+        padding: 15px;
+
+        .image-title {
+            font-size: 15px;
+        }
+    }
+}

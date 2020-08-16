@@ -48,3 +48,27 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .gallery-main-container {
+        background-image: linear-gradient(to bottom left, #f5f5f5, #f5f5f5);
+        padding: 50px;
+
+        .btn {
+            position: unset;
+        }
+        .fa-plus-square {
+            color: #03133a;
+            margin-bottom: 35px;
+        }
+        .image-view-wrapper {
+            padding: 0;
+            border-radius: unset;
+            box-shadow: unset;
+
+            .gallery-title h1 {
+                font-size: 95px;
+            }
+        }
+    }
+}

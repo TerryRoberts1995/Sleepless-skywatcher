@@ -139,7 +139,6 @@ export default function Gallery() {
 
     return (
         <div className="gallery-main-container">
-            <FontAwesomeIcon id="plus-btn" className="btn" onClick={() => handleImageButton("add")} icon="plus-square" />
 
             <Modal
                 isOpen={isOpen}
@@ -159,6 +158,9 @@ export default function Gallery() {
                 </div>
                 <ImageCard imageInfo={image} handleImageButton={handleImageButton} />
             </div>
-        </div>)
+
+            <FontAwesomeIcon id="plus-btn" className="btn" onClick={() => handleImageButton("add")} icon="plus-square" />
+        </div>
+    )
 }
 
