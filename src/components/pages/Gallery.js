@@ -30,9 +30,20 @@ export default function Gallery() {
         return (
             <form className="add-delete-image-form" action="/images" type="submit" onSubmit={submitAdd}>
 
-                <input type="text" placeholder="URL" name="url" onChange={event => handleChange(event)} />
-                <input type="text" placeholder="Title" name="name" onChange={event => handleChange(event)} />
-                <button>Submit</button>
+                <div className="form-input-wrapper">
+                    <div className="add-input">
+                        <input className="modal-inputs" type="text" placeholder="URL" name="url" onChange={event => handleChange(event)} />
+                    </div>
+
+                    <div className="add-input">
+                        <input className="modal-inputs" type="text" placeholder="Title" name="name" onChange={event => handleChange(event)} />
+                    </div>
+                </div>
+
+                <div className="submit-form">
+                    <button className="submit-btn">Submit</button>
+                </div>
+
 
             </form>
         )
@@ -41,9 +52,13 @@ export default function Gallery() {
     const deleteModal = () => {
         return (
             <form className="add-delete-image-form" action="/images" type="submit" onSubmit={submitDelete}>
+                <div id="confirm-text">
+                    Are you sure?
+                    </div>
 
-                <div>Are you sure?</div>
-                <button onClick={(event) => submitDelete(event)}>YES</button>
+                <div className="submit-form">
+                    <button className="submit-form" onClick={(event) => submitDelete(event)}>YES</button>
+                </div>
 
             </form>
         )
@@ -146,7 +161,7 @@ export default function Gallery() {
                 style={customStyles}
                 ariaHideApp={false}
             >
-                <div>{submit === 'add' ? <h1>Add</h1> : <h1>Delete</h1>}</div>
+                <div className="modal-wrapper">{submit === 'add' ? <h1>Add Image</h1> : <h1>Delete Image</h1>}</div>
                 {submit === "add" ? addModal() : deleteModal()}
 
             </Modal>

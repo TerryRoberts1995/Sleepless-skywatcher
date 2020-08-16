@@ -1,0 +1,72 @@
+.ReactModal__Content--after-open {
+    width: 30vw;
+    height: 40vh;
+    font-family: "Poiret One", cursive;
+
+    #confirm-text {
+        padding: 35px;
+        font-size: 35px;
+        font-weight: 600;
+        color: #c50035;
+    }
+
+    .modal-wrapper {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .add-delete-image-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .form-input-wrapper {
+            display: flex;
+            padding: 10px;
+
+            .add-input {
+                padding: 10px;
+
+                .modal-inputs {
+                    padding: 5px;
+                    border-radius: 10px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        .submit-form button {
+            border: none;
+            width: 65px;
+            height: 35px;
+            border-radius: 5px;
+            background-color: #03133a;
+            color: white;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                box-shadow: 1px 1px 10px #03133a;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .ReactModal__Content--after-open {
+        width: 70vw;
+        height: 30vh;
+        font-family: "Poiret One", cursive;
+
+        .add-delete-image-form {
+            .form-input-wrapper {
+                flex-direction: column;
+            }
+        }
+    }
+}
