@@ -1,4 +1,48 @@
-.test {
-    color: black;
-    background-color: white;
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to left, #03133a, black);
+    margin-bottom: 350px;
+
+    .calender {
+        height: 90vh;
+        width: 90vw;
+        .react-calendar {
+            height: 100%;
+            width: 100%;
+
+            .react-calendar__viewContainer {
+                .react-calendar__month-view {
+                    .react-calendar__month-view__days {
+                        .react-calendar__tile {
+                            font-family: "Poiret One", cursive;
+                            position: relative;
+                            border: 1px solid white;
+                            padding: 75px;
+                            background-image: linear-gradient(to left, #03133a, black);
+                            color: white;
+                            font-size: 15px;
+
+                            &:hover {
+                                border: 1px solid #03133a;
+                                transition: 0.3s ease-in-out;
+                            }
+
+                            abbr {
+                                position: absolute;
+                                top: 10px;
+                                right: 15px;
+                                color: white;
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 import Carousel from '../widgets/Carousel'
 
 export default function Home() {

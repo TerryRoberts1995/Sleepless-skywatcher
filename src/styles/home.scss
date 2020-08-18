@@ -1,5 +1,5 @@
 .homepage-container {
-    background-image: linear-gradient(to bottom left, #03133a, black);
+    background-image: linear-gradient(to left, #03133a, black);
     border-top: 1px solid black;
     box-shadow: 1px 1px 5px black;
 
@@ -67,7 +67,7 @@
 
 @media screen and (max-width: 1600px) {
     .homepage-container {
-        background-image: linear-gradient(to bottom left, #03133a, black);
+        background-image: linear-gradient(to left, #03133a, black);
 
         .all-content {
             margin: auto;

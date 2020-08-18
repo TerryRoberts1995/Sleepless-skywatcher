@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Modal from 'react-modal';
 import ImageCard from '../gallery-items/ImageCard';
 import * as Cookies from 'js-cookie';
@@ -68,7 +68,7 @@ export default function Gallery() {
         event.preventDefault();
         setStatus("");
 
-        axios.delete(`http://localhost:5000/images/${imgId}`,
+        axios.delete(`https://sleepless-api.herokuapp.com/images/${imgId}`,
             buildForm(),
             {
                 headers: {
@@ -88,7 +88,7 @@ export default function Gallery() {
         event.preventDefault();
         setStatus("");
 
-        axios.post("http://localhost:5000/images",
+        axios.post("https://sleepless-api.herokuapp.com/images",
             buildForm(),
             {
                 headers: {
@@ -121,24 +121,22 @@ export default function Gallery() {
         }
     }
     const getImageData = () => {
-
-        axios.get("http://localhost:5000/images")
+        axios.get(`https://sleepless-api.herokuapp.com/images`, { withCredentials: true }
+        )
             .then(res => {
                 setImageData(res.data);
                 setSubmit("");
 
             })
-            .catch(error => console.log("A request to your API has resulted in a failure. ", error))
+            .catch(error => console.log("A request to your API has resulted in a failure. ", error));
     }
 
     const handleImageButton = (submitType, id) => {
         setIsOpen(true);
 
         if (submitType === 'add') {
-            console.log('add modal')
             setSubmit(submitType)
         } else {
-            console.log('delete modal')
             setSubmit(submitType)
             setImgId(id);
         }
