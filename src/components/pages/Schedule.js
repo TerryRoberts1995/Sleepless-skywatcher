@@ -7,9 +7,11 @@ import 'react-calendar/dist/Calendar.css';
 export default function Schedule() {
 
     const [apiEvent, setApiEventData] = useState([]);
-    const [events, setEvents] = useState([]);
+    // const [events, setEvents] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [choice, setChoice] = useState("");
+    const [title, setTitle] = useState("");
+    const [trueChoice, setTrueChoice] = useState("");
     const [month, setMonth] = useState(0);
     const [year, setYear] = useState(0);
     const [day, setDay] = useState(0);
@@ -26,6 +28,8 @@ export default function Schedule() {
     };
 
     function handleModalClose(event) {
+        setTrueChoice(choice)
+
         if (!isOpen) {
             setIsOpen(true);
         } else {
@@ -33,6 +37,21 @@ export default function Schedule() {
         }
 
         handleSelect(event)
+    }
+
+    const handleEventCheck = () => {
+        let counter = 1;
+        const allTitles = apiEvent.map(e => {
+
+            console.log(new Date(e.date).toDateString(), 'event') // Test
+            console.log(choice, 'choice') // Test
+
+            if (new Date(e.date).toDateString() === choice) {
+                return <div key={counter++}>{e.title}</div>
+            }
+        })
+
+        setTitle(allTitles);
     }
 
     const getEventData = () => {
@@ -44,45 +63,50 @@ export default function Schedule() {
             .catch(error => console.log("A request to your API has resulted in a failure. ", error));
     }
 
-    const destructorEvent = () => {
-        const dates = apiEvent.map(e => {
-            return e.start
-        })
-
-        const allDates = dates.map(date => {
-            return new Date(date);
-        })
-        setEvents(allDates);
-    }
+    // const destructorEvent = () => {
+    //      setEvents(apiEvents);
+    // }
 
     useEffect(() => {
         getEventData()
-        destructorEvent()
+        handleEventCheck()
+
 
         if (choice === 'Invalid Date') {
             setStates()
         }
-    }, [choice])
+    }, [isOpen])
+
+    const handleModalChange = (event) => {
+        console.log(event.target.value)
+    }
 
     const handleSelect = (event) => {
         const dateValue = new Date(event);
         setDay(dateValue.getDate());
         setMonth(dateValue.getMonth());
         setYear(dateValue.getFullYear());
-        setChoice(dateValue.toString());
+        setChoice(dateValue.toDateString());
     }
 
     const setStates = () => {
-        setChoice("");
+        setChoice(trueChoice);
+        setDay(0);
+        setMonth(0);
+        setYear(0);
     }
 
+
+
+    // console.log(choice)
     return (
         <div className="calendar-container">
             <div className="calender">
                 <Calendar
                     onChange={handleModalClose}
-                    value={[choice]}
-                    // defaultView="month"
+                    // onClickDay={handleEventCheck}
+                    value={choice ? new Date(choice) : new Date()}
+                    defaultView={'month'}
                     defaultActiveStartDate={new Date()}
                     view="month"
                     tileContent={'Click for Info...'}
@@ -99,6 +123,23 @@ export default function Schedule() {
                 >
                     <div className="modal-wrapper">
                         <div>{`${month + 1}/${day}/${year}`}</div>
+
+
+                        <form className="add-delete-image-form" action="/images" type="submit">
+
+                            <div className="form-input-wrapper">
+                                <div className="add-input">
+                                    <input className="modal-inputs" type="text" placeholder="Event Title" name="title" onChange={event => handleModalChange(event)} />
+                                </div>
+
+                                <div className="add-input">
+                                    <input className="modal-inputs" type="time" placeholder="Event Time" name="time" onClick={(event) => console.log(event.target.value)} />
+                                </div>
+                            </div>
+                            <div className="events-container">
+                                {title}
+                            </div>
+                        </form>
                     </div>
 
                 </Modal>
