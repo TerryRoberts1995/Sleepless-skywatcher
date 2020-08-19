@@ -61,6 +61,15 @@
             .titles {
                 .title-container {
                     padding: 10px;
+                    display: flex;
+                    .event-delete {
+                        padding-left: 15px;
+
+                        &:hover {
+                            transition: 0.5s ease-in-out;
+                            color: #c50035;
+                        }
+                    }
                 }
             }
         }

@@ -59,7 +59,9 @@ export default function Schedule() {
             if (new Date(e.date).toDateString() === choice) {
                 return (
                     <div className="title-container" key={counter++}>
-                        Event: {e.title}
+                        <div className="event-list">
+                            Event: {e.title}
+                        </div>
 
                         <FontAwesomeIcon className="event-delete" icon="minus-square" onClick={() => handleDelete(e._id.$oid)} />
                     </div>)
