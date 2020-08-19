@@ -42,8 +42,20 @@
         }
         .events-container {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            flex-direction: initial;
+            justify-content: space-evenly;
+
+            .times {
+                .time-container {
+                    padding: 5px;
+                }
+            }
+
+            .titles {
+                .title-container {
+                    padding: 5px;
+                }
+            }
         }
         .submit-form button {
             border: none;
