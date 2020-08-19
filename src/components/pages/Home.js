@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'
+import React from 'react';
 import Carousel from '../widgets/Carousel'
 
 export default function Home() {
@@ -13,7 +12,7 @@ export default function Home() {
                 <div className="content-body-wrapper">
                     <div className="content-body">
                         <div className="content-image">
-                            <img src="https://images.unsplash.com/photo-1548124771-9f2040b66df8" />
+                            <img src="https://images.unsplash.com/photo-1548124771-9f2040b66df8" alt="content-one" />
                         </div>
 
                         <div className="content-description">
@@ -30,7 +29,7 @@ export default function Home() {
                             <p>I am a also a photographer of all that is space related. If you like a particular object in the sky and want a photo ask me! I have different options that will work for you! If we don't catch an object for you, set up a notifications for when that object is back in the visible sky, that way we can get you that photo.</p>
                         </div>
                         <div className="content-image">
-                            <img src="https://images.unsplash.com/photo-1540945573388-fb1aa7ecb444" />
+                            <img src="https://images.unsplash.com/photo-1540945573388-fb1aa7ecb444" alt="content-two" />
                         </div>
                     </div>
                 </div>

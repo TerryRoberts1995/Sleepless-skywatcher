@@ -16,7 +16,7 @@ export default function ImageCard(props) {
         return (
             <div key={counter + 1} id={trueImageId} className="image-wrapper" onClick={(event) => handleClick(event)}>
                 <div className="image-url">
-                    <img src={`${url}`} />
+                    <img src={`${url}`} alt={`logo${counter}`} />
                 </div>
 
                 <div className="image-title" >

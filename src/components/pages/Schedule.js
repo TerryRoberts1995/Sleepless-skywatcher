@@ -50,16 +50,12 @@ export default function Schedule() {
         const allTitles = apiEvent.map(e => {
 
             if (new Date(e.date).toDateString() === choice) {
-                console.log('date set');
-
                 return <div className="title-container" key={counter++}> Event: {e.title}</div>
             }
         });
 
         const allTimes = apiEvent.map(e => {
             if (new Date(e.date).toDateString() === choice) {
-                console.log('time set');
-
                 return <div className="time-container" key={counter++}> Starts: {e.time}</div>
             }
         });
@@ -110,8 +106,6 @@ export default function Schedule() {
         }
     }, [apiEvent])
 
-
-
     const handleModalChange = (event) => {
 
         const trueDate = new Date(choice).toString();
@@ -154,13 +148,14 @@ export default function Schedule() {
     }
 
     const handleTiles = (props) => {
+        let counter = 1;
         if (contentTileDate.length) {
             return contentTileDate.map(eventDate => {
                 if (props.date.toString() === eventDate) {
 
-                    return <div className="view-events">{apiEvent.map(title => {
+                    return <div key={counter++} className="view-events">{apiEvent.map(title => {
                         if (props.date.toString() === title.date) {
-                            return <div>{title.title}</div>
+                            return <div key={counter++}>{title.title}</div>
                         } else {
 
                         }
@@ -174,7 +169,6 @@ export default function Schedule() {
         }
     }
 
-    //Sat Aug 01 2020 00:00:00 GMT-0500
     return (
         <div className="calendar-container">
             <div className="calender">
@@ -183,7 +177,6 @@ export default function Schedule() {
                     value={choice ? new Date(choice) : new Date()}
                     defaultView={'month'}
                     defaultActiveStartDate={new Date()}
-                    view="month"
                     tileContent={(props) => handleTiles(props)}
                 />
             </div>
@@ -220,7 +213,7 @@ export default function Schedule() {
                                     {title}
                                 </div>
                             </div>
-                            <button>Add Event</button>
+                            <button className="add-event-btn">Add Event</button>
                         </form>
                     </div>
 
