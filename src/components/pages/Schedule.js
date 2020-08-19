@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios';
 import Calendar from 'react-calendar';
 import Modal from 'react-modal';
@@ -44,13 +45,24 @@ export default function Schedule() {
         handleSelect(event)
     }
 
+    const handleDelete = (id) => {
+        axios.delete(`https://sleepless-api.herokuapp.com/events/${id}`, { withCredentials: true })
+            .then(res => console.log(res.data))
+            .catch(error => console.log("An error has occured during your delete request.", error))
+    }
+
     const handleEventCheck = () => {
         let counter = 1;
 
         const allTitles = apiEvent.map(e => {
 
             if (new Date(e.date).toDateString() === choice) {
-                return <div className="title-container" key={counter++}> Event: {e.title}</div>
+                return (
+                    <div className="title-container" key={counter++}>
+                        Event: {e.title}
+
+                        <FontAwesomeIcon className="event-delete" icon="minus-square" onClick={() => handleDelete(e._id.$oid)} />
+                    </div>)
             }
         });
 

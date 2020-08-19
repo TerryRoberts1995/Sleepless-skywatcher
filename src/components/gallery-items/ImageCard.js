@@ -3,10 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 export default function ImageCard(props) {
     let counter = 0;
 
-    const handleClick = (event) => {
-        console.log(event.target)
-    }
-
     const image = props.imageInfo.map(obj => {
         counter++
         const { name, url, _id } = obj;
@@ -14,7 +10,7 @@ export default function ImageCard(props) {
         const trueImageId = _id.$oid;
 
         return (
-            <div key={counter + 1} id={trueImageId} className="image-wrapper" onClick={(event) => handleClick(event)}>
+            <div key={counter + 1} id={trueImageId} className="image-wrapper">
                 <div className="image-url">
                     <img src={`${url}`} alt={`logo${counter}`} />
                 </div>
