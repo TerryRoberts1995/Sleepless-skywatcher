@@ -155,6 +155,7 @@ export default function Schedule() {
                     defaultView={'month'}
                     defaultActiveStartDate={new Date()}
                     view="month"
+                    hover={true}
                     tileContent={'Click for Info...'}
                 />
             </div>
@@ -168,7 +169,7 @@ export default function Schedule() {
                     ariaHideApp={false}
                 >
                     <div className="modal-wrapper">
-                        <div>{`${month + 1}/${day}/${year}`}</div>
+                        <div className="date-display">{`${month + 1}/${day}/${year}`}</div>
 
 
                         <form className="add-delete-image-form" action="/events" type="submit" onSubmit={sendEvent}>

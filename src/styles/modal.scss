@@ -16,6 +16,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        .date-display {
+            font-weight: 600;
+            font-size: 25px;
+        }
     }
     .add-delete-image-form {
         display: flex;
@@ -44,16 +49,18 @@
             display: flex;
             flex-direction: initial;
             justify-content: space-evenly;
+            font-weight: 600;
+            font-size: 18px;
 
             .times {
                 .time-container {
-                    padding: 5px;
+                    padding: 10px;
                 }
             }
 
             .titles {
                 .title-container {
-                    padding: 5px;
+                    padding: 10px;
                 }
             }
         }
