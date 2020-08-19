@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import CarouselCard from './CarouselCard'
 import Slider from "react-slick";
@@ -15,6 +15,27 @@ export default function Carousel() {
         autoplaySpeed: 5000,
     };
 
+    const renderImages = () => {
+        return [
+            <div>
+                <img src='https://images.unsplash.com/photo-1456154875099-97a3a56074d3' alt="image-one" />
+
+            </div>,
+            <div>
+                <img src="https://images.unsplash.com/photo-1543722530-d2c3201371e7" alt="image-two" />
+
+            </div>,
+            <div>
+                <img src="https://images.unsplash.com/photo-1417577097439-425fb7dec05e" alt="image-three" />
+
+            </div>,
+            <div>
+                <img src="https://images.unsplash.com/photo-1504333638930-c8787321eee0" alt="image-four" />
+            </div>
+        ]
+
+    }
+
     return (
         <div className="container">
             <div className="floating-text">
@@ -29,21 +50,8 @@ export default function Carousel() {
             </div>
 
             <Slider {...settings}>
-                <div>
-                    <img src='https://images.unsplash.com/photo-1456154875099-97a3a56074d3' alt="image-one" />
+                {renderImages()}
 
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1543722530-d2c3201371e7" alt="image-two" />
-
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1417577097439-425fb7dec05e" alt="image-three" />
-
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1504333638930-c8787321eee0" alt="image-four" />
-                </div>
             </Slider>
         </div>
     )

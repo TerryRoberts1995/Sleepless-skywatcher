@@ -18,6 +18,7 @@ export default function Schedule() {
     const [newTime, setNewTime] = useState("");
     const [newTitle, setNewTitle] = useState("");
     const [newDate, setNewDate] = useState("");
+    const [contentTileDate, setContentTitleDate] = useState([]);
     const [time, setTime] = useState("");
 
     const customStyles = {
@@ -53,7 +54,7 @@ export default function Schedule() {
 
                 return <div className="title-container" key={counter++}> Event: {e.title}</div>
             }
-        })
+        });
 
         const allTimes = apiEvent.map(e => {
             if (new Date(e.date).toDateString() === choice) {
@@ -61,8 +62,13 @@ export default function Schedule() {
 
                 return <div className="time-container" key={counter++}> Starts: {e.time}</div>
             }
-        })
+        });
 
+        const allDates = apiEvent.map(e => {
+            return e.date
+        });
+
+        setContentTitleDate(allDates)
         setTime(allTimes);
         setTitle(allTitles);
     }
@@ -70,7 +76,6 @@ export default function Schedule() {
     const sendEvent = (event) => {
         event.preventDefault();
 
-        console.log(event)
         axios.post("https://sleepless-api.herokuapp.com/events",
             buildForm(),
             {
@@ -87,6 +92,7 @@ export default function Schedule() {
     }
 
     const getEventData = () => {
+
         axios.get(`https://sleepless-api.herokuapp.com/events`, { withCredentials: true }
         )
             .then(res => {
@@ -99,11 +105,12 @@ export default function Schedule() {
         getEventData()
         handleEventCheck()
 
-
         if (choice === 'Invalid Date') {
             setStates()
         }
-    }, [isOpen])
+    }, [apiEvent])
+
+
 
     const handleModalChange = (event) => {
 
@@ -146,6 +153,28 @@ export default function Schedule() {
         setTime(event.target.value);
     }
 
+    const handleTiles = (props) => {
+        if (contentTileDate.length) {
+            return contentTileDate.map(eventDate => {
+                if (props.date.toString() === eventDate) {
+
+                    return <div className="view-events">{apiEvent.map(title => {
+                        if (props.date.toString() === title.date) {
+                            return <div>{title.title}</div>
+                        } else {
+
+                        }
+                    })}</div>
+                } else {
+                    return null
+                }
+            })
+        } else {
+            return <div>No Data</div>
+        }
+    }
+
+    //Sat Aug 01 2020 00:00:00 GMT-0500
     return (
         <div className="calendar-container">
             <div className="calender">
@@ -155,8 +184,7 @@ export default function Schedule() {
                     defaultView={'month'}
                     defaultActiveStartDate={new Date()}
                     view="month"
-                    hover={true}
-                    tileContent={'Click for Info...'}
+                    tileContent={(props) => handleTiles(props)}
                 />
             </div>
 
