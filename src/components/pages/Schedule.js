@@ -94,7 +94,6 @@ export default function Schedule() {
             })
 
             .then(res => {
-                setIsOpen(false);
             })
             .catch(error => console.log('You api request has failed', error));
     }
@@ -167,7 +166,7 @@ export default function Schedule() {
 
                     return <div key={counter++} className="view-events">{apiEvent.map(title => {
                         if (props.date.toString() === title.date) {
-                            return <div key={counter++}>{title.title}</div>
+                            return <div className="modal-title-display" key={counter++}>{title.title}</div>
                         } else {
 
                         }
