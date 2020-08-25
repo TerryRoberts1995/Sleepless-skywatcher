@@ -26,6 +26,11 @@
         display: flex;
         flex-direction: row;
 
+        .mobile-nav-button {
+            display: none;
+            color: white;
+        }
+
         .nav-link {
             text-align: center;
             margin-right: 125px;
@@ -49,23 +54,25 @@
 
 @media screen and (max-width: 1600px) {
     .navbar-wrapper {
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
 
         .logo-container h1 {
             font-size: 25px;
             margin: auto;
+            margin-left: 10px;
             margin-bottom: 25px;
         }
 
         .nav-link-wrapper {
-
+            flex-direction: column;
+            .mobile-nav-button {
+                display: unset;
+            }
 
             .nav-link {
                 margin-right: 50px;
-
-                .link {}
             }
         }
     }
