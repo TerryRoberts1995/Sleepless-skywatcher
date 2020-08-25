@@ -194,7 +194,6 @@ export default function Schedule() {
                 />
             </div>
 
-
             <div className="calender-modal">
                 <Modal
                     isOpen={isOpen}

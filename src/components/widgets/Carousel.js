@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
 export default function Carousel() {
+    const [images, setImages] = useState([]);
+    const [urls, setUrls] = useState([]);
+
 
     var settings = {
         dots: true,
@@ -13,22 +17,44 @@ export default function Carousel() {
         autoplaySpeed: 5000,
     };
 
+    const getImages = () => {
+        axios.get('https://sleepless-api.herokuapp.com/images', { withCredentials: true })
+            .then(res => {
+                setImages(res.data)
+            })
+            .catch(error => console.log(error));
+    }
+
+    const getUrls = () => {
+        const allUrls = images.map(image => {
+            return image.url;
+        })
+
+        setUrls(allUrls);
+    }
+
+    useEffect(() => {
+        getImages();
+        getUrls();
+    }, [images])
+
     const renderImages = () => {
+        const randomNumber = Math.floor(Math.random() * urls.length);
         return [
             <div>
-                <img src='https://images.unsplash.com/photo-1456154875099-97a3a56074d3' alt="i-one" />
+                <img src={urls[0]} alt="i-one" />
 
             </div>,
             <div>
-                <img src="https://images.unsplash.com/photo-1543722530-d2c3201371e7" alt="i-two" />
+                <img src={urls[1]} alt="i-two" />
 
             </div>,
             <div>
-                <img src="https://images.unsplash.com/photo-1417577097439-425fb7dec05e" alt="i-three" />
+                <img src={urls[2]} alt="i-three" />
 
             </div>,
             <div>
-                <img src="https://images.unsplash.com/photo-1504333638930-c8787321eee0" alt="i-four" />
+                <img src={urls[3]} alt="i-four" />
             </div>
         ]
 
