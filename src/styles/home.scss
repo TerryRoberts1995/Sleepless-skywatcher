@@ -104,6 +104,31 @@
 
         .all-content {
             box-shadow: none;
+
+            .body-middle-image {
+                margin: auto;
+                border-radius: unset;
+            }
+
+            .content-body-wrapper {
+                .content-body {
+                    flex-direction: column;
+
+                    .content-image img {
+                        height: 100%;
+                        width: 100vw;
+                        border-radius: unset;
+                    }
+
+                    .content-description {
+                        p {
+                            font-size: 13px;
+                            text-align: left;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
         }
     }
 }
